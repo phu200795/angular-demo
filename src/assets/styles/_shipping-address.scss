@@ -1,0 +1,80 @@
+.form-look {
+    .titleH {
+        h2 {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    }
+    .nform-group {
+        padding: 10px;
+        padding-left: 0px;
+    }
+    .formDoublegroup {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        .group-box {
+            width: calc(50% - 10px);
+        }
+        @include sm-max {
+            display: block; 
+            .group-box {
+                width: 100%;
+            }
+        }
+    }
+    .fa.imp{
+        font-size: 7px;
+        color: #ff0000;
+        position: absolute;
+        margin-left: 4px;
+        top: 4px;
+    }
+    
+    .checkBoxes {
+        width: 50%;
+        @include sm-max {
+            width: 100%;
+            .applyCheckout {
+                width: 100%;
+            }
+        }
+    }
+    
+    .applyCheckout {
+        border-radius: 30px;
+        width: 65%;
+        padding: 12px 0px;
+        border: 1px solid #818181; 
+        background: $brand-primary;
+        color: #ffffff;
+        cursor: pointer;
+        opacity: 1;
+
+        &:disabled {
+            cursor: not-allowed;
+            color: #818181;
+            background: $btn-form-disabled;
+            opacity: 0.6;
+        }
+    }
+     
+    .select::after {
+        color: red;
+    } 
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none; 
+        background-image: url("../icons/arrowdown.svg");
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: -10px;
+    }  
+    .custom-checkbox {
+        margin-bottom: 20px;
+    }
+    ::placeholder { 
+        color: #a5a3a3;
+        opacity: 1; 
+      }
+}

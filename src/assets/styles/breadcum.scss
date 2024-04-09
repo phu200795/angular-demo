@@ -1,0 +1,23 @@
+.breadcumcontainer {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    margin-bottom: 7px;
+
+    @media screen and (max-width: $screenxsmax) {
+      margin-bottom: 20px;
+    }
+
+    img {
+        vertical-align: baseline;
+    }
+    .clickablebread {
+        cursor: pointer;
+        &:hover {
+            border-bottom: 1px solid #eb0a1e;
+        }
+    }
+    .unclickablebread {
+        text-transform: capitalize;
+    }
+}

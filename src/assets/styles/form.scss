@@ -1,0 +1,503 @@
+form {
+  .forminput {
+    margin-bottom: 30px;
+
+    label {
+      min-width: 220px;
+      height: fit-content;
+      flex-grow: 0;
+      font-family: "Toyota Type";
+      font-size: 16px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #101010;
+      width: fit-content
+    }
+
+    .input-icon-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      align-self: stretch;
+      flex-grow: 0;
+      //justify-content: space-between;
+      padding: 8px 15px 8px 0px;
+      border: none;
+      border-bottom: solid 1px #c4c4c4;
+      margin-top: 10px;
+      font-family: "Toyota Type";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 23px;
+      color: #101010;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      // height: 40px;
+
+      &:focus-visible,
+      &:hover {
+        outline: none;
+        border-bottom: 1px solid #101010;
+      }
+
+      &.show {
+        .selecticon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    select {
+      width: 100%;
+      border: none;
+      font-family: "Toyota Type";
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.87);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("~src/assets/icons/arrowdown.svg");
+      background-position: 98%;
+      background-repeat: no-repeat;
+      background-size: 12px 12px;
+      border: 0px;
+      outline: 0px;
+      padding: 8px 40px 8px 0px !important;
+
+      // &:focus-visible {
+      //     background-image: url("~src/assets/icons/arrowup.svg");
+      // }
+      option {
+        font-family: "Toyota Type";
+        color: #101010;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #ffffff;
+
+        &:checked {
+          color: #eb0a1e;
+        }
+
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+    }
+
+    .secondbtn {
+      gap: 10px;
+      padding: 14px 20px;
+      border: 1px solid #101010;
+      background-color: #ffffff;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #101010;
+
+        span {
+          color: #ffffff;
+        }
+      }
+
+      span {
+        flex-grow: 0;
+        font-family: "Toyota Type";
+        font-size: 12px;
+        font-weight: 600;
+        color: #101010;
+        text-transform: uppercase;
+      }
+    }
+
+    textarea {
+      margin-top: 12px;
+      resize: none;
+      width: 100%;
+      padding: 5px 0px 8px 12px;
+      font-family: "Toyota Type";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    &.form-switch-point-expiration {
+      padding-left: 3.5em;
+    }
+
+    &.form-switch {
+      &.disable-switch {
+        opacity: 0.5;
+        cursor: not-allowed;
+        .form-check-label {
+          cursor: not-allowed;
+        }
+      }
+      .form-check-input {
+        width: 48px;
+        height: 22px;
+        background-color: #CCC;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+        border-color: #CCC;
+        cursor: pointer;
+        &:checked {
+          background-color: #EB0A1E;
+          border-color: #EB0A1E;
+          &:focus {
+            border-color: #EB0A1E;
+          }
+        }
+        &:focus {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+          border-color: #CCC;
+          box-shadow: unset
+        }
+      }
+      
+      .form-check-label {
+        padding-top: 2px;
+        padding-left: 15px;
+        min-width: auto;
+        cursor: pointer;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
+.mobilefield {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+
+  .mobilefield-item {
+    margin-top: 10px;
+    &:first-child {
+      input:first-child {
+        width: 90px !important;
+      }
+    }
+    input {
+      margin-top: 0;
+    }
+  }
+}
+
+.help-block {
+  margin-top: 10px;
+
+  span {
+    flex-grow: 0;
+    text-align: left;
+    color: #eb0a1e !important;
+    font-size: 15px;
+
+    @media screen and (max-width: $screensmmax) {
+      font-size: 13px;
+    }
+  }
+}
+
+input:disabled {
+  background-color: #ffffff;
+  color: rgba(16, 16, 16, 0.5) !important;
+  border-bottom: 1px solid rgba(16, 16, 16, 0.2) !important;
+
+  &:hover {
+    border-bottom: 1px solid rgba(16, 16, 16, 0.2) !important;
+  }
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  outline: none;
+  // opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  cursor: pointer !important;
+}
+
+.dropdown {
+
+  //height: 40px;
+  .enableselect {
+    height: 100%;
+    display: flex;
+    padding: 0px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 0px;
+    &.start-month {
+      padding: 8px 0;
+      img {
+        height: 24px;
+        width: 24px;
+      }
+      &.show {
+        img {
+          transform: unset;
+        }
+      }
+    }
+    .status,
+    .selectionitem {
+      height: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      // justify-content: flex-start;
+      justify-content: left;
+      align-items: center;
+      gap: 5px;
+      padding: 0;
+      min-height: 25px;
+
+      span {
+        //width: 50px;
+        height: fit-content;
+        flex-grow: 0;
+        font-family: "Toyota Type";
+        font-size: 16px;
+        font-weight: 400;
+        //text-transform: capitalize;
+      }
+
+      .enable {
+        color: #119900;
+      }
+
+      .disable {
+        color: #eb0a1e;
+      }
+    }
+
+    .selecticon {
+      width: 12px;
+      height: 12px;
+    }
+
+    .selectsection {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      .selectcontainer {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-flow: wrap;
+      }
+
+      .selectionitem {
+        padding: 6px 12px;
+        gap: 10px;
+        height: 34px;
+        border: 1px solid #cccccc;
+
+        @media screen and (max-width: $screenxsmax) {
+          min-height: 34px;
+          height: auto;
+        }
+      }
+
+      .noselection {
+        span {
+          color: rgba(16, 16, 16, 0.5);
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    min-width: 150px;
+    max-height: 15rem;
+    overflow: auto;
+    z-index: 100;
+
+    .dropdown-item {
+      cursor: pointer;
+
+      div {
+        display: block;
+        width: 100%;
+
+        span {
+          font-family: "Toyota Type";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          color: #101010;
+          width: 100%;
+          padding: 5px 0;
+        }
+      }
+
+      &:hover,
+      &:active {
+        background: #eeeeee;
+
+        div {
+          span {
+            background: #eeeeee;
+          }
+        }
+      }
+    }
+
+    .disableditem {
+      cursor: default;
+
+      div {
+        span {
+          color: rgba(16, 16, 16, 0.2);
+        }
+      }
+    }
+  }
+
+  .assignselect {
+    height: fit-content;
+
+    .selectsection {
+      flex-flow: wrap;
+
+      .selectionitem {
+        flex-grow: 0;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  // /* Track */
+  // ::-webkit-scrollbar-track {
+  //   box-shadow: inset 0 0 5px grey;
+  //   border-radius: 10px;
+  // }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #eb0a1e;
+    // border-radius: 10px;
+  }
+
+  // /* Handle on hover */
+  // ::-webkit-scrollbar-thumb:hover {
+  //   background: #b30000;
+  // }
+}
+
+select:invalid {
+  color: rgba(16, 16, 16, 0.5) !important;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  font-family: "Toyota Type";
+  color: rgba(16, 16, 16, 0.5);
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: "Toyota Type";
+  color: rgba(16, 16, 16, 0.5);
+}
+
+::placeholder {
+  font-family: "Toyota Type";
+  color: rgba(16, 16, 16, 0.5);
+}
+
+.selectplaceholder {
+  color: rgba(16, 16, 16, 0.5);
+}
+
+.selecteditem {
+  color: #eb0a1e !important;
+}
+
+select::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+select::-webkit-scrollbar-thumb {
+  background: #eb0a1e;
+  // border-radius: 10px;
+}
+
+// .inputcontainer {
+//   margin-top: 10px;
+// }
+
+.input-select {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  width: 94% !important;
+  cursor: pointer;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.input-multiple-language {
+  background-color: #F5F5F5;
+
+  input {
+      background-color: #F5F5F5;
+  }
+}

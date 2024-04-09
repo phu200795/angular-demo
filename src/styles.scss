@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* import variables */
+@import 'assets/styles/_variables.scss';
+@import 'assets/styles/mixins.scss';
+@import 'assets/styles/helper.scss';
+@import 'assets/styles/fonts';
+/* Importing Bootstrap SCSS file. */
+//@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/_functions.scss';
+// @import '~bootstrap/scss/_variables.scss';
+// @import '~bootstrap/scss/_mixins.scss';
+
+// html, body { height: 100%; }
+body { font-family: "Toyota Type", sans-serif !important; }
+@import 'assets/styles/common.scss';
+@import 'assets/styles/table.scss';
+@import 'assets/styles/button.scss';
+@import 'assets/styles/form.scss';
+@import 'assets/styles/pagination.scss';
+@import 'assets/styles/breadcum.scss';
+@import 'assets/styles/checkbox.scss';
+@import 'assets/styles/modal.scss';
+@import 'assets/styles/header.scss';
+@import 'assets/styles/checkout-page.scss';
+@import 'assets/styles/shipping-address.scss';
+@import 'assets/styles/system-setting';
+@import 'assets/styles/my-bonus-title.scss';
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Toyota Type',
+);
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 567px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1900px
+// );
+

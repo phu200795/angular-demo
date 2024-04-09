@@ -1,0 +1,24 @@
+.my-bonus-point,
+.bonus-point-redemption {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.my-bonus-title {
+    font-family: Arial;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+.my-bonus-wrap {
+    padding: 32px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    @media only screen and (max-width: 767px) {
+        padding: 15px;
+    }
+}

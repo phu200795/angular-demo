@@ -1,0 +1,81 @@
+<div class="containersection">
+  <div class="subheadercontainer">
+      <div class="breadcumcontainer">
+          <span class="clickablebread" routerLink="/home"> {{'home'}}</span>
+          <span>
+              <img src="assets/icons/breadcumarrow.svg" />
+          </span>
+          <span class="unclickablebread">
+              {{'new home'}}
+          </span>
+      </div>
+      <div class="title-buttoncontainer">
+          <div class="titlecontainer">
+              <span class="maintitle">
+                  {{'new home'}}
+              </span>
+          </div>
+          <div class="buttoncontainer">
+              <div class="rightbuttoncontainer">
+                  <button class="btnsubmit secondbtn">
+                      <span>
+                          {{'cancel'}}
+                      </span>
+                  </button>
+                  <button
+                      [ngClass]="homeForm.invalid ? 'btnsubmit disabledbtn' : 'btnsubmit primarybtn'"
+                      form="ngForm" [disabled]="homeForm.invalid">
+                      <span>
+                          create
+                      </span>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid pad-mobile">
+      <form [formGroup]="homeForm" (ngSubmit)="onSubmit()" id="ngForm">
+          <div class="row">
+              <div class="forminput col-lg-6 col-md-6 col-xs-12">
+                  <label>
+                      {{'home code'}}
+                  </label>
+                  <input [placeholder]="'home code'" class="input-icon-container" type="text"
+                      formControlName="homecode" />
+              </div>
+              <div class="forminput col-lg-6 col-md-6 col-xs-12">
+                  <label>
+                      {{'home name'}}
+                      <span class="required">*</span>
+                  </label>
+                  <input class="input-icon-container" type="text" formControlName="homename"
+                      maxlength="64" [placeholder]="'home name'"
+                      (focusout)="onStrimText('homename')" />
+                  <div *ngIf="!homeForm.get('homename')?.valid && homeForm.get('homename')?.touched"
+                      class="help-block">
+                      <span *ngIf="homeForm.get('homename')?.errors?.['required']">
+                          {{'error_message.required'}}
+                      </span>
+                      <span *ngIf="homeForm.get('homename')?.errors?.['pattern']">
+                          {{'error_message.no_white_start_end'}}
+                      </span>
+                  </div>
+              </div>
+              <div class="forminput col-lg-12 col-md-12 col-xs-12">
+                  <label>
+                      {{'description'}}
+                  </label>
+                  <div class="inputcontainer">
+                      <textarea rows="5" formControlName="description" maxlength="255"
+                          [placeholder]="'description home'"
+                          (focusout)="onStrimText('description')"></textarea>
+                      <div class="help-block">
+                          <!-- <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This name is invalid!</span> -->
+                          <!-- <span *ngIf="signupForm.get('userData.email').errors['required']">{{'This field is required'}}</span> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>

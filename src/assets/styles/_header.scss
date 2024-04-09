@@ -1,0 +1,160 @@
+header {
+    .checkout {
+        @include lg {
+            padding: $padding-md $text-padding-medium;
+        }
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0px;
+        color: $text-color;
+    }
+
+    .header-program-reward {
+        background-color: #232323;
+        width: $full-width;
+        display: inline-block;
+        color: var(--header-text-color);
+        position: relative;
+        border-bottom: 1px solid $border-color-4;
+        padding: 0px;
+        box-shadow: 0px 2px 20px rgba(51, 41, 100, 0.35);
+
+        @include lg {
+            min-height: 83px;
+            max-height: 83px;
+        }
+
+        &.fixed {
+            position: fixed;
+            width: $full-width;
+            z-index: 9999;
+            top: 0;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            @include lg {
+                min-height: 83px;
+                max-height: 83px;
+            }
+        }
+
+        .logo {
+            padding-right: $logo-padding-right;
+
+            img {
+                width: 126px;
+                max-width: $full-width;
+                @include md-max {
+                    display: none;
+                }
+            }
+
+            .logo-label {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 27px;
+                color: #FFFFFF;
+                display: none;
+                @include md-max {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .header-nav {
+        margin: 0 auto;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+        .global-icon {
+            img {
+                cursor: pointer !important;
+            }
+        }
+        .cart-icon {
+            position: relative;
+            div {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background: red;
+                position: absolute;
+                top: 5px;
+                right: 0px;
+            }
+        }
+        .user-info {
+            display: flex;
+        }
+        .profile-user {
+            margin-right: 20px;
+            color: #ffffff;
+            .user-name {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 19px;
+                margin-bottom: 0;
+                text-transform: capitalize;
+            }
+            .rank {
+                font-size: 14px;
+                line-height: 19px;
+            }
+        }
+    }
+}
+
+@include md-max {
+    header {
+        .header-program-reward {
+            padding: $padding-md 0px;
+            @include md-max {
+                padding: 2px 0;
+            }
+
+            .header-row {
+                .logo {
+                    order: 2;
+                    padding-right: 0px;
+                }
+
+                .header-nav {
+                    order: 1;
+                    margin: 0;
+
+                    button {
+                        margin-right: 0;
+                    }
+
+                    .navbar-toggler-icon {
+                        width: 1.6em;
+                        height: 1.6em;
+                        background-image: url(../icons/hamburger-menu-icon.svg);
+                    }
+                }
+
+                .header-right {
+                    order: 3;
+                    .cart-icon {
+                        display: none;
+                    }
+                    .profile-user {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

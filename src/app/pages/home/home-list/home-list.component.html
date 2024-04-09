@@ -1,0 +1,176 @@
+<div class="containersection">
+  <div class="subheadercontainer">
+    <div class="title-buttoncontainer">
+      <div class="titlecontainer">
+        <span class="maintitle">
+          {{'roles'}}
+        </span>
+        <span class="subtitle">
+          {{totalRecord}}
+        </span>
+      </div>
+      <div class="buttoncontainer">
+        <div class="rightbuttoncontainer">
+          <button class="btnsubmit primarybtn" routerLink="new">
+            <span>
+              {{'new role'}}
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid pad-mobile">
+    <div class="searchfiltercontainer">
+      <form [formGroup]="filterGroup" (ngSubmit)="onFilter()">
+        <div class="forminput">
+          <label>
+            {{'filter text'}}
+          </label>
+          <input class="input-icon-container" formControlName="filterText"
+            [placeholder]="'search role'" />
+        </div>
+        <div class="forminput">
+          <button type="submit" class="btnsubmit secondbtn">
+            <span>
+              {{'filter'}}
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="table-wrap">
+      <div class="pagecontainer" *ngIf="homeData && homeData.length">
+        <div class="paginationcontainer toppagination">
+          <div class="totalrecord">
+            <span>{{startRecord}} - {{endRecord}} {{'of'}} {{totalRecord}}
+              {{'results'}}</span>
+          </div>
+          <div class="pagination">
+            <div class="pagenumber">
+              <span>{{'show'}}</span>
+              <div class="showrecord">
+                <form [formGroup]="pageGroup">
+                  <select formControlName="totalRecord" (change)="onFilter()">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                  </select>
+                </form>
+              </div>
+              <span>{{'rows'}}</span>
+            </div>
+          </div>
+        </div>
+        <ng-template [ngIf]="homeData && homeData.length">
+          <div class="wrap-table">
+            <table mat-table [dataSource]="homeData">
+              <ng-container *ngFor="let item of displayedColumns" [matColumnDef]="item">
+                <th mat-header-cell *matHeaderCellDef>
+                  <div class="sortheader" *ngIf="item !== 'action'">
+                    <div class="sortheadercontainer">
+                      <span>{{(item === 'code' ? 'role code' : item === 'name' ?
+                        'role name':item)}}</span>
+                    </div>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element"><span class="row-label">{{(item ===
+                    'code'
+                    ? 'role_code' : item === 'name' ? 'role_name' :item)}}</span>
+                  <div class="status" *ngIf="item !== 'action' && item === 'user_assigned'">
+                    <span [ngClass]="element[item] === 'Yes' ? '' : 'disable'">{{element[item]}}</span>
+                  </div>
+                  <div *ngIf="item !== 'action' && item !=='status' && item !== 'user_assigned'">
+                    {{element[item]}}</div>
+                  <div class="status" *ngIf="item !== 'action' && item ==='status'">
+                    <span [ngClass]="element.status === 'Active' ? 'enable' : 'disable'">{{element.status}}</span>
+                  </div>
+                  <div *ngIf="item === 'action'">
+                    <img src="assets/icons/menudot.svg" id="dropdownMenuOffset" data-bs-toggle="dropdown"
+                      aria-expanded="false" data-bs-offset="10,20" />
+                    <ul class="dropdown-menu actionmenu" aria-labelledby="dropdownMenuOffset">
+                      <li class="dropdown-item">
+                        <div>
+                          <span>{{'test'}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="paginationcontainer bottom-pagination">
+            <div class="totalrecord">
+              <span>{{startRecord}} - {{endRecord}} {{'of'}} {{totalRecord}}
+                {{'results'}}</span>
+            </div>
+            <div class="pagination" id="pagiselect">
+              <a (click)="onPreviousPage()">
+                <img src="assets/icons/arrowleftic.svg" />
+              </a>
+              <a *ngIf="totalPage > 8" [ngClass]="currentPage === 1 ? 'active':''" (click)="onGotoPage(1)">1</a>
+              <span class="showgoto" *ngIf="currentPage >= 5 && !pages.includes(4)" [ngbPopover]="popGotoPage"
+                placement="top" popoverClass="newGotoContainer" [autoClose]="'outside'" triggers="manual"
+                #popover="ngbPopover" (click)="togglePopover(popover)">...</span>
+              <a *ngFor="let page of pages" [ngClass]="page === currentPage ? 'active':''"
+                (click)="onGotoPage(page)">{{page}}</a>
+              <span class="showgoto" *ngIf="totalPage > 8 && !pages.includes(totalPage - 1)" [ngbPopover]="popGotoPage"
+                placement="top" popoverClass="newGotoContainer" [autoClose]="'outside'" triggers="manual"
+                #popover="ngbPopover" (click)="togglePopover(popover)">...</span>
+              <a *ngIf="totalPage > 8" [ngClass]="currentPage === totalPage ? 'active':''"
+                (click)="onGotoPage(totalPage)">{{totalPage}}</a>
+              <a (click)="onNextPage()">
+                <img src="assets/icons/arrowleftic.svg" />
+              </a>
+            </div>
+            <div class="pagination">
+              <div class="pagenumber">
+                <span>{{'show'}}</span>
+                <div class="showrecord">
+                  <form [formGroup]="pageGroup">
+                    <select formControlName="totalRecord" (change)="onFilter()">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                    </select>
+                  </form>
+                </div>
+                <span>{{'rows'}}</span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <ng-template [ngIf]="homeData && homeData.length === 0">
+      <div>
+        <span>{{'no matching'}}</span>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<!-- loader -->
+<div class="loader-container">
+  <div class="spinner"></div>
+</div>
+<!-- show go to page-->
+<ng-template #popGotoPage>
+  <div class="gotocontainer">
+    <span>{{'go to'}}</span>
+    <form [formGroup]="gotoGroup" (ngSubmit)="onGotoPageSubmit()" id="ngFormGoto">
+      <input type="number" formControlName="gotoPage" (keypress)="onKeyDownNumber($event)">
+    </form>
+    <button class="btnsubmit primarybtn" form="ngFormGoto">
+      <span>
+        {{'go'}}
+      </span>
+    </button>
+  </div>
+</ng-template>

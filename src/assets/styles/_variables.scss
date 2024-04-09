@@ -1,0 +1,257 @@
+$screenxs:480px;
+$screensm:768px;
+$screenmd:1024px;
+$screenlg:1400px;
+$screenminipad: 1181px;
+
+$screenxsmin:480px;
+$screensmmin:768px;
+$screenmdmin:1024px;
+$screenlgmin:1400px;
+
+$screenxsmax:767px;
+$screensmmax:1023px;
+$screensmmaxipad: 1180px;
+$screenmdmax:1399px;
+
+:root {
+  --bs-font-sans-serif: 'Toyota Type',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Co";
+}
+.row {
+  --bs-gutter-x: 2.25rem;
+}
+
+@media screen and (max-width: 960px) {
+  :root {
+    --bs-body-font-size: 0.875rem;
+  }
+
+  .row {
+    --bs-gutter-x: 1.25rem;
+  }
+}
+
+
+$text-font-stack: "Manrope" !default;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+/* Brand color */
+$brand-primary:   #232323;
+$brand-secondary: #FFFFFF;
+$brand-info: 			#000000;
+$brand-gray: 			#f7f7f7;
+$brand-success:   #5cb85c;
+$brand-info:      #5bc0de;
+$brand-warning:   #f0ad4e;
+$brand-danger:    #d9534f;
+
+
+
+
+/* Typography color */
+$text-color:            #000000;
+$text-color-white:	    #FFFFFF;
+$text-color-third:	  	#f7f7f7;
+$text-color-light:	  	#eeeeee;
+$link-color: 		       	#000000;
+$headline-color:    		#000000;
+$product-text-color:        #767677;
+
+
+/* subtitle color */
+
+$subtitle-color: #000000;
+$product-title-color: #000000;
+$product-description: #000000;
+
+
+/* Borders color */
+$border-color: 			#C8C8C8;
+$border-color-2:		#E6E6E6;
+$border-color-3:		#D7D7D7;
+$border-color-4:        #EEEEEE;
+$border-color-5:        #F2F2F2;
+$border-color-6:        #d0d0d0;
+$border-color-7:        #000000;
+$border-color-8:        #818181;
+
+
+/* Form color */
+$label-color: #515151;
+$input-color: #000000;
+$input-height-base: 45px;
+$input-height-large: 45px;
+$input-background: #F1F1F1;
+$input-border-color: #F1F1F1;
+$placeholder-color: #B2B2B2;
+$toggle-thumb: #AAAAAA;
+$input-error : $brand-danger;
+$textarea-height-base: 100px;
+
+/* Header Background */
+$header-background-color: #000000;
+$nav-border-color: #000000;
+
+$banner-carousel-default: #ffffff80;
+$banner-carousel-active: $text-color-white;
+
+/* Search */
+$searchbar-icon-color: #000000;
+$autocomplete-background: #ffffff;
+
+
+/* Header Navigation-Categories Background */
+$nav-cat-background: #ffffff;
+$nav-cat-border: #E6E6E6;
+$nav-cat-link-color: #000000;
+$nav-cat-heading-font-size: 15px;
+$nav-cat-font-size: 14px;
+
+
+/* Footer colors */
+$footer-background: #000000;
+$footer-text-color: #ffffff;
+$footer-border-color: #ffffff;
+$social-icon-background: #808080;
+$footer-border-color-6:  #4E4E4E;
+$footer-text-color-2: #1F1F1F;
+
+
+/*Primary Button State*/
+$btn-primary-color: $brand-secondary;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
+$btn-primary-hover-color: $brand-primary;
+$btn-primary-hover-border: $brand-primary;
+$btn-primary-hover-background: $brand-secondary;
+$btn-primary-disabled-bg: $brand-primary;
+$btn-primary-disabled-color: #757577;
+$btn-primary-disabled-border: #757577;
+
+/*Secondary Button State */
+$btn-secondary-color: $brand-primary;
+$btn-secondary-bg: $brand-secondary;
+$btn-secondary-border: $brand-secondary;
+$btn-secondary-hover-color: $brand-secondary;
+$btn-secondary-hover-border: $brand-secondary;
+$btn-secondary-hover-background: $brand-primary;
+$btn-secondary-disabled-bg: $brand-secondary;
+$btn-secondary-disabled-color: #757577;
+$btn-secondary-disabled-border: #757577;
+
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:           	 transparent;
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                transparent;
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             transparent;
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              transparent;
+
+$btn-link-disabled-color:        $brand-gray;
+
+$btn-form-active:           #333333;
+$btn-form-disabled:         #ffffff;
+
+
+$full-width: 100% !default;
+$half-width: 50%;
+$container-width: 1600px !default;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 320px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 993px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
+$base-url: '/assets/' !default;
+
+/* font size */
+$fs12: 12px;
+$fs14: 14px;
+$fs15: 15px;
+$fs16: 16px;
+$fs17: 17px;
+$fs18: 18px;
+$fs20: 20px;
+$fs22: 22px;
+$fs24: 24px;
+$fs26: 26px;
+$fs28: 28px;
+$fs30: 30px;
+$fs32: 32px;
+$fs36: 36px;
+$fs38: 38px;
+$fs40: 40px;
+$fs44: 44px;
+$fs48: 48px;
+
+$fs-small: $fs12;
+$fs-normal: $fs14;
+$fs-medium: $fs16;
+$fs-big: $fs20;
+$fs-h1: $fs32;
+
+/* padding */
+$grid-gutter-width:         20px;
+$padding-small:  10px;
+$padding-md:  12px;
+$padding-large-horizontal:  15px;
+$padding-large-vertical:  24px;
+$padding-container: 30px;
+$text-padding-xs:20px;
+$text-padding-mid: 35px;
+$text-padding-large: 60px;
+$text-padding-medium: $padding-container;
+
+/* button width */
+$btn-big: 245px;
+$btn-medium: 180px;
+$btn-color-picker: 117px;
+$btn-footer: 106px;
+$btn-small: 92px;
+
+
+/* border-radius */
+$border-radius-base:        20px;
+$border-radius-large:       100px;
+$border-radius-small:       10px;
+$border-radius-half:        50%;
+
+
+/* Promotion */
+$promotion-bg: #F96E6E;
+
+/* Slider */
+$slider-nav-bg: #EBEBEB;
+
+/*Star Ratting */
+$star-ratting-medium: 19px;
+$star-ratting-normal: 17px;
+
+
+/* Brand Logo */
+$logo-padding: 15px;
+$logo-width: 170px;
+$logo-width-sm: 30%;
+$logo-padding-right: 30px;
+
+/* summary block */
+
+$summary-background: #F5F5F5;
